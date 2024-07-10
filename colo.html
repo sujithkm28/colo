@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Image Swap</title>
+    <style>
+        body {
+            background-image: url('wallpaperflare.com_wallpaper (7).jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const imageSources = [
+            '1.webp', '2.avif', '3.avif', '4.avif', 
+            'jack-russell-with-risograph-effect-remixed-media_53876-126874.avif', '6.avif', '7.avif', '8.avif', 
+            '9.avif', '10.avif'
+        ];
+
+        function changeBackgroundImage() {
+            const randomIndex = Math.floor(Math.random() * imageSources.length);
+            document.body.style.backgroundImage = `url(${imageSources[randomIndex]})`;
+        }
+
+        // Change the background image every 5 seconds (1000 milliseconds)
+        setInterval(changeBackgroundImage, 500);
+    </script>
+</body>
+</html>
